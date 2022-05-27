@@ -1,0 +1,12 @@
+name: 'Assign desired requested reviewers to Pull Request and/or Issue'
+description: 'Assign configured users on review'
+inputs:
+  GITHUB_TOKEN:
+    required: true
+  who-to-assign:
+    description: 'Usernames of people to assign (space-separated)'
+    required: true
+    default: ''
+runs:
+  using: 'node16'
+  main: 'index.js'
