@@ -10,7 +10,7 @@ try {
         const reviewers = github.context.payload.pull_request.requested_reviewers.map(user => user.login);
         whoToAssign = reviewers.filter(r => whoToAssign.includes(r));
     } else if (github.context.eventName === 'pull_request_review') {
-        const author = [github.context.payload.pull_request.author];
+        const author = [github.context.payload.pull_request.user.login];
         whoToAssign = author.filter(a => whoToAssign.includes(a));
     }
 
